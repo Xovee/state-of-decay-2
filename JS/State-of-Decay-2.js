@@ -97,7 +97,7 @@ $(function(){
 		$('.secondPageContent').css('display', 'none');
 	});
 	
-	//点击筛选
+	//点击范围
 	$('.secondPageFilter').click(function(){
 		$('.filter').slideToggle('fast');
 		if($('#slidePicture').hasClass('up')){
@@ -118,22 +118,34 @@ $(function(){
 	})
 
 	$('.contentBox').click(function(){
+		alert('123');
 		$(this).children('.detailContentBox').slideToggle('fast');
 	})
+
 	
 	//点击filter选项
 	//武器-近战武器
 	function createCloseCombatWeaponContentBox(array){
-		$('#secondPageContent').empty();
 		$.each(array, function(key, val){
-			$('#secondPageContent').append("<div class='contentBox'><div class='twoThird'>" + val.name + "</div><div class='three'>" 
-			+ val.type + "</div><div class='clear'></div><div class='detailContentBox hide'><div class='full description'>" + 
-			val.description + "<br>" + val.cnDescription + "</div><div class='clear'></div></div></div>");
+			$('#secondPageContent').append(
+				"<div class='contentBox'>" +
+					"<div class='twoThird'>" + val.name + "</div>" + 
+					"<div class='three'>" + val.type + "</div>" + 
+					"<div class='clear'></div>" + 
+					"<div class='detailContentBox hide'>" + 
+						"<div class='full description'>" + val.description + "<br>" + val.cnDescription + "</div>" + 
+						"<div class='clear'></div>" + 
+					"</div>" + 
+				"</div>");
 		})
 	}
 
 	$('#closeCombatWeapon').click(function(){
-		createCloseCombatWeaponContentBox(closeCombatWeaponList);
+		if($(this).hasClass('filterSelected')){
+			createCloseCombatWeaponContentBox(closeCombatWeaponList);
+		} else {
+			$('.secondPageContent').empty();
+		}
 	})
 
 	
