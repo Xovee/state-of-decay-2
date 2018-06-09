@@ -202,12 +202,29 @@ li .liName {
 	right: 1rem;
 }
 
+.secondPageContent {
+	position: fixed;
+	top: 3rem;
+	bottom: 3rem;
+	width: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
 .contentBox {
 	background-color: orange;
 	border-radius: 5px;
 	margin: 0.5rem;
 	padding: 0.2rem 0;
 	text-align: center;
+}
+
+@media (min-width: 64rem) {
+	.secondPageContent {
+		position: absolute;
+		max-width: 2160px;
+		width: 100%;
+	}
 }
 
 .filter {
@@ -358,6 +375,12 @@ li .liName {
 .description {
 	padding: 0 0.5rem;
 	text-align: left;
+}
+
+@media (min-width: 64rem) {
+	.description {
+		text-align: center;
+	}
 }
 
 @media (min-width: 64rem) {

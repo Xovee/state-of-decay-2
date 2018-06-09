@@ -33,14 +33,16 @@ $(function(){
 	// 点击导航
 	$('li').click(function(){
 		$('#secondPage').css('display', 'block');
+		$('#secondPageContent').empty();
 		$('.container').hide();
 		$(this).children('.liName').addClass('selected');
 		currentPage = $('.selected').text();
 		if(currentPage == '武器'){
-			$('#filterHave, #filterWeapon').removeClass('hide');
+			$('#filterWeapon').removeClass('hide');
 		}
 		if(currentPage == '车辆'){
-			$('#filterHave, #filterVehicle').removeClass('hide');
+			// $('#filterHave, #filterVehicle').removeClass('hide');
+			$('#filterVehicle').removeClass('hide');
 		}
 		if(currentPage == '物品'){
 			$('#filterHave, #filterObject').removeClass('hide');
@@ -109,6 +111,7 @@ $(function(){
 	
 	//点击筛选项
 	$('.filterItem').click(function(){
+		$('#secondPageContent').empty();
 		$(this).toggleClass('filterSelected').siblings().removeClass('filterSelected')
 		$(this).siblings().children().removeClass('filterSelected');
 		$(this).siblings('.secondFilter').hide();
@@ -117,9 +120,8 @@ $(function(){
 		}
 	})
 
-	$('.contentBox').click(function(){
-		alert('123');
-		$(this).children('.detailContentBox').slideToggle('fast');
+	$('.secondPageContent').on('click', '.contentBox', function(){
+		$(this).children('.detailContentBox').slideToggle();
 	})
 
 	
@@ -140,6 +142,7 @@ $(function(){
 		})
 	}
 
+
 	$('#closeCombatWeapon').click(function(){
 		if($(this).hasClass('filterSelected')){
 			createCloseCombatWeaponContentBox(closeCombatWeaponList);
@@ -148,9 +151,131 @@ $(function(){
 		}
 	})
 
-	
-		
+	//武器-格斗武器
+	function createMeleeWeaponContentBox(array){
+		$.each(array, function(key, val){
+			$('#secondPageContent').append(
+				"<div class='contentBox'>" +
+					"<div class='twoThird'>" + val.name + "</div>" + 
+					"<div class='three'>" + val.secondType + "</div>" + 
+					"<div class='clear'></div>" + 
+					"<div class='detailContentBox hide borderTop'>" + 
+						"<div class='three'>Salvage: </div><div class='twoThird'>" + val.salvage + "</div><div class='clear'></div>" +
+						"<div class='full description'>" + val.description + "<br>" + val.cnDescription + "</div>" + 
+						"<div class='clear'></div>" + 
+					"</div>" + 
+				"</div>");
+		})
+	}
 
+
+	$('#meleeWeapon, #blunt, #bladed').click(function(){
+		var meleeWeaponFilterList = [];
+		if($('#blunt').hasClass('filterSelected')){
+			$.each(meleeWeaponList, function(key, val){
+				if(val.secondType == '钝器'){
+					meleeWeaponFilterList.push(val);
+				}
+			})
+			createMeleeWeaponContentBox(meleeWeaponFilterList);
+		} else if($('#bladed').hasClass('filterSelected')){
+			$.each(meleeWeaponList, function(key, val){
+				if(val.secondType == '锐器'){
+					meleeWeaponFilterList.push(val);
+				}
+			})
+			createMeleeWeaponContentBox(meleeWeaponFilterList);
+		} else if($('#meleeWeapon').hasClass('filterSelected')){
+			createMeleeWeaponContentBox(meleeWeaponList);
+		} else {
+			$('.secondPageContent').empty();
+		}
+	})	
+		
+//武器-远程武器
+function createRangedWeaponContentBox(array){
+	$.each(array, function(key, val){
+		$('#secondPageContent').append(
+			"<div class='contentBox'>" +
+				"<div class='twoThird'>" + val.name + "</div>" + 
+				"<div class='three'>" + val.secondType + "</div>" + 
+				"<div class='clear'></div>" + 
+				"<div class='detailContentBox hide borderTop'>" + 
+					"<div class='three borderTop'>口径: </div><div class='twoThird borderTop'>" + val.caliber + "</div><div class='clear'></div>" +
+					"<div class='three borderTop'>容量: </div><div class='twoThird borderTop'>" + val.capacity + "</div><div class='clear'></div>" +
+					"<div class='three borderTop'>Salvage: </div><div class='twoThird borderTop'>" + val.salvage + "</div><div class='clear'></div>" +
+					"<div class='full description borderTop'>" + val.description + "<br>" + val.cnDescription + "</div>" + 
+					"<div class='clear'></div>" + 
+				"</div>" + 
+			"</div>");
+	})
+}
+
+
+$('#rangedWeapon, #rangedWeaponType > div').click(function(){
+	var rangedWeaponFilterList = [];
+	if($('#pistol').hasClass('filterSelected')){
+		$.each(rangedWeaponList, function(key, val){
+			if(val.secondType == '手枪'){
+				rangedWeaponFilterList.push(val);
+			}
+		})
+		createRangedWeaponContentBox(rangedWeaponFilterList);
+	} else if($('#revolver').hasClass('filterSelected')){
+		$.each(rangedWeaponList, function(key, val){
+			if(val.secondType == '左轮手枪'){
+				rangedWeaponFilterList.push(val);
+			}
+		})
+		createRangedWeaponContentBox(rangedWeaponFilterList);
+	} else if($('#rifle').hasClass('filterSelected')){
+		$.each(rangedWeaponList, function(key, val){
+			if(val.secondType == '步枪'){
+				rangedWeaponFilterList.push(val);
+			}
+		})
+		createRangedWeaponContentBox(rangedWeaponFilterList);
+	} else if($('#assult').hasClass('filterSelected')){
+		$.each(rangedWeaponList, function(key, val){
+			if(val.secondType == '突击步枪'){
+				rangedWeaponFilterList.push(val);
+			}
+		})
+		createRangedWeaponContentBox(rangedWeaponFilterList);
+	} else if($('#antiMetarielRifle').hasClass('filterSelected')){
+		$.each(rangedWeaponList, function(key, val){
+			if(val.secondType == '反器材步枪'){
+				rangedWeaponFilterList.push(val);
+			}
+		})
+		createRangedWeaponContentBox(rangedWeaponFilterList);
+	} else if($('#shotgun').hasClass('filterSelected')){
+		$.each(rangedWeaponList, function(key, val){
+			if(val.secondType == '霰弹枪'){
+				rangedWeaponFilterList.push(val);
+			}
+		})
+		createRangedWeaponContentBox(rangedWeaponFilterList);
+	} else if($('#cannon').hasClass('filterSelected')){
+		$.each(rangedWeaponList, function(key, val){
+			if(val.secondType == '榴弹炮'){
+				rangedWeaponFilterList.push(val);
+			}
+		})
+		createRangedWeaponContentBox(rangedWeaponFilterList);
+	} else if($('#xovee').hasClass('filterSelected')){
+		$.each(rangedWeaponList, function(key, val){
+			if(val.name == 'Xovee'){
+				rangedWeaponFilterList.push(val);
+			}
+		})
+		createRangedWeaponContentBox(rangedWeaponFilterList);
+	} else if($('#rangedWeapon').hasClass('filterSelected')){
+		createRangedWeaponContentBox(rangedWeaponList);
+	} else {
+		$('.secondPageContent').empty();
+	}
+})	
 
 	
 	
