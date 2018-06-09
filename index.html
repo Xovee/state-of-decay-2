@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>State of Decay Wiki</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="CSS/State-of-Decay-2.css" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="JS/State-of-Decay-2.js"></script>
+		<script src="JS/Data/weapon.js"></script>
+
+	</head>
+	<body>
+		<header class='logo'></header>
+		<div class='container'>
+			<article>
+				<div class='intro'>
+				<div class='header'>腐烂国度2 资料库</div>
+				<div class='intro-detail'>
+				<br>如果遇到任何问题，请联系我：
+				<br>微博：<div class='weibo'>Xovee</div>
+				<br>邮箱：<div class='mailbox'>Xovee@qq.com</div>
+				<br>欢迎提供游戏数据~
+				</div>
+				</div>
+			</article>
+			<nav>
+				<ul>
+					<li id='weaponNav'><span class='liName'>武器</span> <span class='engli'>Weapons</span></li>
+					<li><div class='liName'>车辆</div> <div class='engli'>Vehicles</div></li>
+					<li><div class='liName'>物品</div> <div class='engli'>Objects</div></li>
+					<li><div class='liName'>任务</div> <div class='engli'>Missions</div></li>
+					<li><div class='liName'>性格</div> <div class='engli'>Traits</div></li>
+					<li><div class='liName'>技能</div> <div class='engli'>Skills</div></li>
+					<li><div class='liName'>基地</div> <div class='engli'>Base</div></li>
+					<li id='aboutNav'><div class='liName'>关于</div> <div class='engli'>About</div></li>
+				</ul>
+			</nav>
+			<footer>
+			
+			</footer>
+		</div>
+		
+		<!-- 点击导航，显示二级页面 -->
+		<div id='secondPage' class='secondPage'>
+			<header class='secondPageHeader'>
+				<div id='secondPageHeaderName' class='secondPageHeaderName'></div>
+				<div id='returnMainPage' class='returnMainPage'>返回</div>
+			</header>
+			<div id='secondPageContent' class='secondPageContent'>
+			</div>
+			<form id='filter' class='filter'>
+				<div id='filterHave' class='filterType hide'>
+					<div id='showAll' value='all' class='filterItem textCenter three'>全部</div>
+					<div id='showHave' value='have' class='filterItem textCenter three'>已获得</div>
+					<div id='showNotHave' value='not have' class='filterItem textCenter three'>未获得</div>
+				</div>
+				<div id='filterWeapon' class='filterType hide'>
+					<div id='closeCombatWeapon' value='closeCombatWeapon' class='filterWeapon filterItem textCenter brt'>近战武器</div>
+					<div id='meleeWeapon' value='meleeWeapon' class='filterWeapon filterItem textCenter'>格斗武器</div>
+					<div id='meleeWeaponType' class='meleeWeaponType secondFilter hide'>
+						<div id='blunt' class='filterWeapon textCenter filterItem half'>钝器</div>
+						<div id='bladed' class='filterWeapon textCenter filterItem half'>锐器</div>
+						<div class='clear'></div>
+					</div>
+					<div id='rangedWeapon' value='rangedWeapon' class='filterWeapon filterItem textCenter'>远程武器</div>
+					<div id='rangedWeaponType' class='rangedWeaponType secondFilter hide'>
+						<div id='pistol' class='filterWeapon textCenter filterItem three'>手枪</div>
+						<div id='revolver' class='filterWeapon textCenter filterItem three'>左轮手枪</div>
+						<div id='rifle' class='filterWeapon textCenter filterItem three'>步枪</div>
+						<div id='assult' class='filterWeapon textCenter filterItem three'>突击步枪</div>
+						<div id='antiMetarielRifle' class='filterWeapon textCenter filterItem three'>反器材步枪</div>
+						<div id='shotgun' class='filterWeapon textCenter filterItem three'>霰弹枪</div>
+						<div id='cannon' class='filterWeapon textCenter filterItem half'>加农炮</div>
+						<div id='xovee' class='filterWeapon textCenter filterItem half'>Xovee</div>
+						<div class='clear'></div>
+					</div>
+				</div>
+				<div id='filterVehicle' class='filterType hide'>
+					<div id='lightVehicle' value='lightVehicle' class='filterItem textCenter full brt'>轻型车</div>
+					<div id='middleVehicle' value='middleVehicle' class='filterItem textCenter full'>中型车</div>
+					<div id='heavyVehicle' value='heavyVehicle' class='filterItem textCenter full'>重型车</div>
+					<div class='clear'></div>
+				</div>
+				<div id='filterObject' class='filterType hide'>
+					<div id='tool' value='tool' class='filterItem textCenter full brt'>工具</div>
+					<div id='mod' value='mod' class='filterItem textCenter full'>MOD</div>
+					<div id='medicine' value='medicine' class='filterItem textCenter full'>药品</div>
+					<div id='explosive' value='explosive' class='filterItem textCenter full'>爆炸物</div>
+					<div id='backpack' value='backpack' class='filterItem textCenter full'>背包</div>
+					<div id='collection' value='collection' class='filterItem textCenter full'>收藏品</div>
+					<div class='clear'></div>
+				</div>
+				<div id='filterMission' class='filterType hide'>
+					<div id='legacy' value='legacy' class='filterItem textCenter full brt'>传奇任务 Legacy</div>
+					<div id='legacyType' class='legacyType secondFilter hide'>
+						<div id='trader' class='filterMission textCenter filterItem four'>商人</div>
+						<div id='builder' class='filterMission textCenter filterItem four'>建造者</div>
+						<div id='armer' class='filterMission textCenter filterItem four'>军人</div>
+						<div id='lingzhu' class='filterMission textCenter filterItem four'>领主</div>
+						<div class='clear'></div>
+					</div>
+					<div id='saveMe' value='helpMe' class='filterItem textCenter full'>求救任务</div>
+					<div id='exchange' value='exchange' class='filterItem textCenter full'>交易任务</div>
+					<div id='helpMe' value='helpMe' class='filterItem textCenter full'>帮助任务</div>
+					<div class='clear'></div>
+				</div>
+				<div id='filterTrait' class='filterType hide'>
+					<div id='charA' value='charA' class='filterItem textCenter five'>A</div>
+					<div id='charB' value='charB' class='filterItem textCenter five'>B</div>
+					<div id='charC' value='charC' class='filterItem textCenter five'>C</div>
+					<div id='charD' value='charD' class='filterItem textCenter five'>D</div>
+					<div id='charE' value='charE' class='filterItem textCenter five'>E</div>
+					<div id='charF' value='charF' class='filterItem textCenter five'>F</div>
+					<div id='charG' value='charG' class='filterItem textCenter five'>G</div>
+					<div id='charH' value='charH' class='filterItem textCenter five'>H</div>
+					<div id='charI' value='charI' class='filterItem textCenter five'>I</div>
+					<div id='charJ' value='charJ' class='filterItem textCenter five'>J</div>
+					<div id='charK' value='charK' class='filterItem textCenter five'>K</div>
+					<div id='charL' value='charL' class='filterItem textCenter five'>L</div>
+					<div id='charM' value='charM' class='filterItem textCenter five'>M</div>
+					<div id='charN' value='charN' class='filterItem textCenter five'>N</div>
+					<div id='charO' value='charO' class='filterItem textCenter five'>O</div>
+					<div id='charP' value='charP' class='filterItem textCenter five'>P</div>
+					<div id='charQ' value='charQ' class='filterItem textCenter five'>Q</div>
+					<div id='charR' value='charR' class='filterItem textCenter five'>R</div>
+					<div id='charS' value='charS' class='filterItem textCenter five'>S</div>
+					<div id='charT' value='charT' class='filterItem textCenter five'>T</div>
+					<div id='charU' value='charU' class='filterItem textCenter five'>U</div>
+					<div id='charV' value='charV' class='filterItem textCenter five'>V</div>
+					<div id='charW' value='charW' class='filterItem textCenter five'>W</div>
+					<div id='charX' value='charX' class='filterItem textCenter five'>X</div>
+					<div id='charY' value='charY' class='filterItem textCenter five'>Y</div>
+					<div id='charZ' value='charZ' class='filterItem textCenter full btb'>Z</div>
+					<div class='clear'></div>
+				</div>
+				<div id='filterTrait2' class='filterType hide'>
+					<div id='buff' value='buff' class='filterItem textCenter three'>增益</div>
+					<div id='affectSkill' value='affectSkill' class='filterItem textCenter three'>影响技能</div>
+					<div id='debuff' value='debuff' class='filterItem textCenter three'>减益</div>
+					<div class='clear'></div>
+				</div>
+				<div id='filterSkill' class='filterType hide'>
+					<div id='run' value='run' class='filterItem textCenter full brt'>体力</div>
+					<div id='wit' value='wit' class='filterItem textCenter full'>智慧</div>
+					<div id='combat' value='combat' class='filterItem textCenter full'>战斗</div>
+					<div id='shooting' value='shooting' class='filterItem textCenter full'>射击</div>
+					<div id='specialSkill' value='specialSkill' class='filterItem textCenter full'>特殊技能</div>
+					<div class='clear'></div>
+				</div>
+				<div id='filterBase' class='filterType hide'>
+					<div id='cascadeHills' value='cascadeHills' class='filterItem textCenter full brt'>瀑布丘陵</div>
+					<div id='meagherValley' value='meagherValley' class='filterItem textCenter full'>米尔山谷</div>
+					<div id='druckerCounty' value='druckerCounty' class='filterItem textCenter full'>德鲁克郡</div>
+					<div class='clear'></div>
+				</div>
+			</form>
+			<footer id='secondPageFilter' class='secondPageFilter borderTop'>
+				<div class='slideName'>范围</div>
+				<div id='slidePicture' class='down'></div>
+			</footer>
+			<div id='pageInfo' class='pageInfo hide'>
+					<p>
+						介绍本页面情况。
+					</p>
+			</div>
+		</div>
+	</body>
+</html>

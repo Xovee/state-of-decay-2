@@ -1,0 +1,376 @@
+html {
+	font-family: fantasy, verdana;
+}
+
+body {
+	background: fixed center center url(../Materials/Picture/Cars-Mobile-compressed.jpg) no-repeat;
+	background-size: cover;
+}
+
+@media (min-width: 64rem) {
+	body {
+		background: fixed center center url(../Materials/Picture/Cars-1080p-compressed.jpg) no-repeat;
+		background-size: cover;
+		overflow-y: scroll;
+	}
+}
+
+.logo {
+	background: fixed center top url(../Materials/Picture/state-of-decay-2-logo.png) no-repeat;
+	background-size: 100px auto;
+	height: 100px;
+	margin: auto;
+}
+
+@media (min-width: 64rem) {
+	.logo {
+		background-size: 200px auto;
+		height: 200px;
+	}
+}
+
+.container {
+	background-color: #CA6929;
+	background-color: #FFD39B;
+	border-radius: 0.6rem;
+	border: 1px black groove;
+	margin: 5px auto;
+	top: 20%;
+	width: 95%;
+	/* background-color: #CA6929; */
+}
+
+@media (min-width: 64rem) {
+	.container {
+		width: 60%;
+		max-width: 2160px;
+	}
+}
+
+article {
+	background-color: #FFD39B;
+	border-radius: 5px;
+	margin: 0 0.3rem;
+	padding: 0.6rem 0.2rem 0;
+}
+
+.intro {
+	background-color: #CA6929;
+	border-radius: 5px;
+	border-right: 1px solid grey;
+	border-bottom: 1px solid grey;
+	color: #CA6929;
+	color: #AFAFA2;
+	font-weight: bold;
+	margin-bottom: 0;
+	padding: 0;
+}
+
+.header {
+	font-size: 2rem;
+	text-align: center;
+	padding: 1rem 0 0 0;
+}
+
+.intro-detail {
+	padding-left: 1rem;
+	padding-bottom: 0.5rem;
+}
+
+.mailbox, .weibo {
+	font-family: sans-serif;
+	font-weight: normal;
+	display: inline;
+}
+
+ul {
+	background-color: #CA6929;
+	background-color: #FFD39B;
+	border-radius: 5px;
+	margin: 0 0.3rem 0.6rem 0.3rem;
+	padding: 0.6rem 0.2rem 0 0.2rem;
+}
+
+li {
+	background-color: #FFD39B;
+	background-color: #CA6929;
+	border-right: 1px solid grey;
+	border-bottom: 1px solid grey;
+	color: #CA6929;
+	color: #AFAFA2;
+	font-size: 1.8rem;
+	font-weight: bold;
+	height: 3.4rem;
+	line-height: 3.4rem;
+	list-style-type: none;
+	text-align: center;
+}
+
+
+li:active {
+	background-color: orange;
+	color: black;
+}
+
+#weaponNav {
+	border-radius: 5px 5px 0 0;
+}
+
+#aboutNav {
+	border-radius: 0 0 5px 5px;
+}
+
+
+@media (min-width: 64rem) {
+	li {
+		cursor: pointer;
+	}
+	
+	li:hover, .intro:hover {
+		background-color: orange;
+		color: black;
+	}
+}
+
+li .engli {
+	display: inline;
+	font-weight: normal;
+}
+li .liName {
+	display: inline;
+}
+
+/* 第二页面 */
+.secondPage {
+	background-color: #FFD39B;
+	display: none;
+	left: 0;
+	min-height: 100%;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+@media (min-width: 64rem) {
+	.secondPage {
+		border-radius: 0.6rem;
+		border: 1px black groove;
+		left: 20%;
+		max-width: 2160px;
+		margin: 5px auto;
+		top: 20%;
+		width: 60%;
+	}
+}
+
+.secondPageHeader {
+	
+	background-color: orange;
+	border-bottom: 1px solid black;
+	color: black;
+	font-weight: bold;
+	font-size: 1.2rem;
+	height: 3rem;
+	width: 100%;
+}
+
+@media (min-width: 64rem) {
+	.secondPageHeader {
+		border-radius: 0.6rem 0.6rem 0 0;
+		box-sizing: border-box;
+		margin: 0 auto;
+	}
+}
+
+.secondPageHeaderName {
+	border-radius: 0.4rem;
+	cursor: pointer;
+	height: 1.7rem;
+	left: 1rem;
+	line-height: 1.7rem;
+	margin: 0.65rem auto;
+	position: absolute;
+}
+
+.returnMainPage {
+	border-radius: 0.4rem;
+	cursor: pointer;
+	height: 1.7rem;
+	line-height: 1.7rem;
+	margin: 0.65rem 0;
+	position: absolute;
+	right: 1rem;
+}
+
+.contentBox {
+	background-color: orange;
+	border-radius: 5px;
+	margin: 0.5rem;
+	padding: 0.2rem 0;
+	text-align: center;
+}
+
+.filter {
+	background-color: orange;
+	border-radius: 5px;
+	bottom: 3rem;
+	position: fixed;
+	width: 100%;
+}
+
+.filterItem {
+	background-color: #FFD39B;
+	height: 2rem;
+	line-height: 2rem;
+	cursor: pointer;
+}
+
+#filterHave, #filterTrait2 {
+	border-radius: 1rem;
+	margin: 0.5rem;
+	overflow: hidden;
+}
+
+#filterWeapon,#filterVehicle, #filterObject, #filterMission, #filterTrait, #filterTrait2, #filterSkill, #filterBase 
+{
+	border-radius: 1rem;
+	margin: 0.5rem;
+}
+
+#charA { border-radius: 1rem 0 0 0; }
+#charE { border-radius: 0 1rem 0 0; }
+
+.brt {
+	border-radius: 1rem 1rem 0 0;
+}
+
+.brb {
+	border-radius: 0 0 1rem 1rem;
+}
+
+.secondWeaponItem {
+	padding: 0.2rem 0;
+	height: 1.5rem;
+	line-height: 1.5rem;
+}
+	
+.secondPageFilter {
+	background-color: orange;
+	bottom: 0;
+	color: black;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 1.2rem;
+	height: 3rem;
+	position: fixed;
+	width: 100%;
+}
+
+@media (min-width: 64rem) {
+	.secondPageFilter, .filter {
+		box-sizing: border-box;
+		margin: 0 auto;
+		width: 60%;
+	}
+}
+
+.slideName {
+	font-size: 1.2rem;
+	height:2.5rem;
+	line-height: 2.5rem;
+	left: 1rem;
+	margin-top: 0.25rem;
+	position: absolute;
+}
+
+.up {
+	background: center center url(../Materials/Icon/up.png) no-repeat;
+	background-size: 60% 60%;
+	height: 2.5rem;
+	margin-top: 0.25rem;
+	position: absolute;
+	right: 0.8rem;
+	width: 2.5rem;
+}
+
+.down {
+	background: center center url(../Materials/Icon/down.png) no-repeat;
+	background-size: 60% 60%;
+	height: 2.5rem;
+	margin-top: 0.25rem;
+	position: absolute;
+	right: 0.8rem;
+	width: 2.5rem;
+}
+
+.borderTop {
+	border-top: 1px solid black;
+}
+
+.hide {
+	display: none;
+}
+
+.textCenter {
+	text-align: center;
+}
+
+.filterSelected {
+	background-color: #CA6929;
+	background-color: green;
+	color: white;
+}
+
+.clear {
+	clear: both;
+}
+
+.full {
+	float: left;
+	width: 100%;
+}
+
+.twoThird {
+	float: left;
+	width: 66.6%;
+}
+
+.half {
+	float: left;
+	width: 50%;
+}
+
+.three {
+	float: left;
+	width: 33.3%;
+}
+
+.four {
+	float: left;
+	width: 25%;
+}
+
+.five {
+	float: left;
+	width: 20%;
+}
+
+.description {
+	padding: 0 0.5rem;
+	text-align: left;
+}
+
+@media (min-width: 64rem) {
+	.secondPageHeader {
+		width: 100%;
+	}
+}
+
+/* Small screens (default) */
+html { font-size: 100%; }
+
+
+/* Large screens (1024px) */
+@media (min-width: 64rem) { 
+  html { font-size: 120%; }
+}
