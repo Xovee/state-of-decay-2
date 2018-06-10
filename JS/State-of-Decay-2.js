@@ -156,11 +156,11 @@ $(function(){
 		$.each(array, function(key, val){
 			$('#secondPageContent').append(
 				"<div class='contentBox'>" +
-					"<div class='twoThird'>" + val.name + "</div>" + 
-					"<div class='three'>" + val.secondType + "</div>" + 
+					"<div class='half'>" + val.name + "</div>" + 
+					"<div class='half'>" + val.secondType + "</div>" + 
 					"<div class='clear'></div>" + 
 					"<div class='detailContentBox hide borderTop'>" + 
-						"<div class='three'>Salvage: </div><div class='twoThird'>" + val.salvage + "</div><div class='clear'></div>" +
+						"<div class='half'>Salvage: </div><div class='half'>" + val.salvage + "</div><div class='clear'></div>" +
 						"<div class='full description'>" + val.description + "<br>" + val.cnDescription + "</div>" + 
 						"<div class='clear'></div>" + 
 					"</div>" + 
@@ -197,13 +197,13 @@ function createRangedWeaponContentBox(array){
 	$.each(array, function(key, val){
 		$('#secondPageContent').append(
 			"<div class='contentBox'>" +
-				"<div class='twoThird'>" + val.name + "</div>" + 
-				"<div class='three'>" + val.secondType + "</div>" + 
+				"<div class='half'>" + val.name + "</div>" + 
+				"<div class='half'>" + val.secondType + "</div>" + 
 				"<div class='clear'></div>" + 
 				"<div class='detailContentBox hide borderTop'>" + 
-					"<div class='three borderTop'>口径: </div><div class='twoThird borderTop'>" + val.caliber + "</div><div class='clear'></div>" +
-					"<div class='three borderTop'>容量: </div><div class='twoThird borderTop'>" + val.capacity + "</div><div class='clear'></div>" +
-					"<div class='three borderTop'>Salvage: </div><div class='twoThird borderTop'>" + val.salvage + "</div><div class='clear'></div>" +
+					"<div class='half borderTop'>口径: </div><div class='half borderTop'>" + val.caliber + "</div><div class='clear'></div>" +
+					"<div class='half borderTop'>容量: </div><div class='half borderTop'>" + val.capacity + "</div><div class='clear'></div>" +
+					"<div class='half borderTop'>Salvage: </div><div class='half borderTop'>" + val.salvage + "</div><div class='clear'></div>" +
 					"<div class='full description borderTop'>" + val.description + "<br>" + val.cnDescription + "</div>" + 
 					"<div class='clear'></div>" + 
 				"</div>" + 
@@ -228,6 +228,13 @@ $('#rangedWeapon, #rangedWeaponType > div').click(function(){
 			}
 		})
 		createRangedWeaponContentBox(rangedWeaponFilterList);
+	} else if($('#assaultPistol').hasClass('filterSelected')){
+		$.each(rangedWeaponList, function(key, val){
+			if(val.secondType == '突击手枪'){
+				rangedWeaponFilterList.push(val);
+			}
+		})
+		createRangedWeaponContentBox(rangedWeaponFilterList);
 	} else if($('#rifle').hasClass('filterSelected')){
 		$.each(rangedWeaponList, function(key, val){
 			if(val.secondType == '步枪'){
@@ -235,7 +242,7 @@ $('#rangedWeapon, #rangedWeaponType > div').click(function(){
 			}
 		})
 		createRangedWeaponContentBox(rangedWeaponFilterList);
-	} else if($('#assult').hasClass('filterSelected')){
+	} else if($('#assault').hasClass('filterSelected')){
 		$.each(rangedWeaponList, function(key, val){
 			if(val.secondType == '突击步枪'){
 				rangedWeaponFilterList.push(val);
@@ -252,6 +259,13 @@ $('#rangedWeapon, #rangedWeaponType > div').click(function(){
 	} else if($('#shotgun').hasClass('filterSelected')){
 		$.each(rangedWeaponList, function(key, val){
 			if(val.secondType == '霰弹枪'){
+				rangedWeaponFilterList.push(val);
+			}
+		})
+		createRangedWeaponContentBox(rangedWeaponFilterList);
+	} else if($('#launcher').hasClass('filterSelected')){
+		$.each(rangedWeaponList, function(key, val){
+			if(val.secondType == '发射器'){
 				rangedWeaponFilterList.push(val);
 			}
 		})

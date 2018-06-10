@@ -49,11 +49,11 @@ var meleeWeapon23 = new meleeWeapon('Parang', '格斗武器', '锐器', 10, "Thi
 var meleeWeapon24 = new meleeWeapon('Police Baton', '格斗武器', '锐器', 11, "You can rely on this lightweight bludgeon to \"serve and protect\" you and your community.", "你可以依赖这把轻量的警棍去“服务和保护”你和你的社区。");
 var meleeWeapon25 = new meleeWeapon('Rebar Blade', '格斗武器', '锐器', 24, "Somebody forget this durable sword out of solid rebar. If it doesn't slice 'em open, it'll probably knock 'em down.", "有些人忘了这把耐用的武器是用钢材制作的。如果它没有将敌人撕裂，那么它肯定把敌人砍倒在地。");
 var meleeWeapon26 = new meleeWeapon('Tactihawk', '格斗武器', '锐器', 9, "Made overseas. Bought on the Internet. Never used ... until now.", "海外制作。购买于互联网。从来没被使用过，直到现在。");
-
+var meleeWeapon27 = new meleeWeapon("Tire Iron", '格斗武器', '钝器', 16, "This lightweight bludgeon is as good at cracking skulls as it is at fixing tires. Maybe better, to be honest.", "");
 // var meleeWeapon = new meleeWeapon("", '格斗武器', '', , "", "");
 
 
-var meleeWeaponList = [meleeWeapon1, meleeWeapon2, meleeWeapon3, meleeWeapon4, meleeWeapon5, meleeWeapon6, meleeWeapon7, meleeWeapon8, meleeWeapon9, meleeWeapon10, meleeWeapon11, meleeWeapon12, meleeWeapon13, meleeWeapon14, meleeWeapon15, meleeWeapon16, meleeWeapon17, meleeWeapon18, meleeWeapon19, meleeWeapon20, meleeWeapon21, meleeWeapon22, meleeWeapon23, meleeWeapon24, meleeWeapon25, meleeWeapon26];
+var meleeWeaponList = [meleeWeapon1, meleeWeapon2, meleeWeapon3, meleeWeapon4, meleeWeapon5, meleeWeapon6, meleeWeapon7, meleeWeapon8, meleeWeapon9, meleeWeapon10, meleeWeapon11, meleeWeapon12, meleeWeapon13, meleeWeapon14, meleeWeapon15, meleeWeapon16, meleeWeapon17, meleeWeapon18, meleeWeapon19, meleeWeapon20, meleeWeapon21, meleeWeapon22, meleeWeapon23, meleeWeapon24, meleeWeapon25, meleeWeapon26, meleeWeapon27];
 
 meleeWeaponList.sort(compare);
 
@@ -89,10 +89,12 @@ var rangedWeapon17 = new rangedWeapon("M99X1 Timberwolf", '远程武器', '反�
 var rangedWeapon18 = new rangedWeapon("Model 870", '远程武器', '霰弹枪', '12g shells', 6, 26, true, "A classic hunting shotgun with good range and accuracy. The most widely mass-produced shotgun in the world.", "一个经典的打猎用霰弹枪，拥有出色的射程和准确性。它是这个世界上生产规模最大的霰弹枪。");
 var rangedWeapon19 = new rangedWeapon("Reliable 870 Sawed-Off", '远程武器', '霰弹枪', '12g shells', 6, 26, true, "A home defender that has defended many homes over many life times, now cut down for better portability and mobility.<br>The springs and crews on the loading port have been fine tuned to speed up reloads.", "曾经被一个守卫者用来保护了许多许多的生命，现在则被改造的更轻便。<br>装弹部分的Springs和crews已经被很好的调整，来加快装弹速度。");
 var rangedWeapon20 = new rangedWeapon("B50FG", '远程武器', '榴弹炮', '.50 AP', 12, 19, true, "A crude prototype meant to bring the power of an anti-aircraft gun down to portable size.<br>If you dream of raw, blistering firepower, this is weapon for you.", "一个粗糙的原型意味着将高射炮的威力降低到一个可移动的尺寸。<br>如果你梦想着一个生猛的武器，就是它了。");
-
+var rangedWeapon21 = new rangedWeapon("M203 Standalone", '远程武器', '发射器', '40mm grenade', 1, 30, false, "A standard US Army grenade launcher fitted to a pistol grip with a shoulder stock. Think of it as a long-range explosive-delivery system.", "一款标准的美式军用炮弹发射器，装在一个手枪的握把上，还配有一个枪托。把它想做是一个长距离炸弹运输系统吧！");
+var rangedWeapon22 = new rangedWeapon("MAC-10", '远程武器', '突击手枪', '.45 cal rounds', 30, 37, true, "Renowned for its compactness, incredible rate of fire, stopping power, and capacity, but also for terrible handing and low durability. Best known for showing up in the hands of badguys in action movies.", "");
+var rangedWeapon23 = new rangedWeapon("Model 70 Classic", '远程武器', '步枪', '7.62mm rounds', 5, 30, false, "A classic bolt-action hunting rifle, found throughout the remains of rural America.<br>Revered for the quality of its manufacture.<br>Bolt-action rifles never jam or break.", "");
 
 // var rangedWeapon = new rangedWeapon("", '远程武器', '', '', , , , "", "");
 
-var rangedWeaponList = [rangedWeapon1, rangedWeapon2, rangedWeapon3, rangedWeapon4, rangedWeapon5, rangedWeapon6, rangedWeapon7, rangedWeapon8, rangedWeapon9, rangedWeapon10, rangedWeapon11, rangedWeapon12, rangedWeapon13, rangedWeapon14, rangedWeapon15, rangedWeapon16, rangedWeapon17, rangedWeapon18, rangedWeapon19, rangedWeapon20];
+var rangedWeaponList = [rangedWeapon1, rangedWeapon2, rangedWeapon3, rangedWeapon4, rangedWeapon5, rangedWeapon6, rangedWeapon7, rangedWeapon8, rangedWeapon9, rangedWeapon10, rangedWeapon11, rangedWeapon12, rangedWeapon13, rangedWeapon14, rangedWeapon15, rangedWeapon16, rangedWeapon17, rangedWeapon18, rangedWeapon19, rangedWeapon20, rangedWeapon21, rangedWeapon22, rangedWeapon23];
 
 rangedWeaponList.sort(compare);
