@@ -192,109 +192,180 @@ $(function(){
 		}
 	})	
 		
-//武器-远程武器
-function createRangedWeaponContentBox(array){
-	$.each(array, function(key, val){
-		$('#secondPageContent').append(
-			"<div class='contentBox'>" +
-				"<div class='half'>" + val.name + "</div>" + 
-				"<div class='half'>" + val.secondType + "</div>" + 
-				"<div class='clear'></div>" + 
-				"<div class='detailContentBox hide borderTop'>" + 
-					"<div class='half borderTop'>口径: </div><div class='half borderTop'>" + val.caliber + "</div><div class='clear'></div>" +
-					"<div class='half borderTop'>容量: </div><div class='half borderTop'>" + val.capacity + "</div><div class='clear'></div>" +
-					"<div class='half borderTop'>Salvage: </div><div class='half borderTop'>" + val.salvage + "</div><div class='clear'></div>" +
-					"<div class='full description borderTop'>" + val.description + "<br>" + val.cnDescription + "</div>" + 
+	//武器-远程武器
+	function createRangedWeaponContentBox(array){
+		$.each(array, function(key, val){
+			$('#secondPageContent').append(
+				"<div class='contentBox'>" +
+					"<div class='half'>" + val.name + "</div>" + 
+					"<div class='half'>" + val.secondType + "</div>" + 
 					"<div class='clear'></div>" + 
-				"</div>" + 
-			"</div>");
-	})
-}
-
-
-$('#rangedWeapon, #rangedWeaponType > div').click(function(){
-	var rangedWeaponFilterList = [];
-	if($('#pistol').hasClass('filterSelected')){
-		$.each(rangedWeaponList, function(key, val){
-			if(val.secondType == '手枪'){
-				rangedWeaponFilterList.push(val);
-			}
+					"<div class='detailContentBox hide borderTop'>" + 
+						"<div class='half borderTop'>口径: </div><div class='half borderTop'>" + val.caliber + "</div><div class='clear'></div>" +
+						"<div class='half borderTop'>容量: </div><div class='half borderTop'>" + val.capacity + "</div><div class='clear'></div>" +
+						"<div class='half borderTop'>Salvage: </div><div class='half borderTop'>" + val.salvage + "</div><div class='clear'></div>" +
+						"<div class='full description borderTop'>" + val.description + "<br>" + val.cnDescription + "</div>" + 
+						"<div class='clear'></div>" + 
+					"</div>" + 
+				"</div>");
 		})
-		createRangedWeaponContentBox(rangedWeaponFilterList);
-	} else if($('#revolver').hasClass('filterSelected')){
-		$.each(rangedWeaponList, function(key, val){
-			if(val.secondType == '左轮手枪'){
-				rangedWeaponFilterList.push(val);
-			}
-		})
-		createRangedWeaponContentBox(rangedWeaponFilterList);
-	} else if($('#assaultPistol').hasClass('filterSelected')){
-		$.each(rangedWeaponList, function(key, val){
-			if(val.secondType == '突击手枪'){
-				rangedWeaponFilterList.push(val);
-			}
-		})
-		createRangedWeaponContentBox(rangedWeaponFilterList);
-	} else if($('#rifle').hasClass('filterSelected')){
-		$.each(rangedWeaponList, function(key, val){
-			if(val.secondType == '步枪'){
-				rangedWeaponFilterList.push(val);
-			}
-		})
-		createRangedWeaponContentBox(rangedWeaponFilterList);
-	} else if($('#assault').hasClass('filterSelected')){
-		$.each(rangedWeaponList, function(key, val){
-			if(val.secondType == '突击步枪'){
-				rangedWeaponFilterList.push(val);
-			}
-		})
-		createRangedWeaponContentBox(rangedWeaponFilterList);
-	} else if($('#antiMetarielRifle').hasClass('filterSelected')){
-		$.each(rangedWeaponList, function(key, val){
-			if(val.secondType == '反器材步枪'){
-				rangedWeaponFilterList.push(val);
-			}
-		})
-		createRangedWeaponContentBox(rangedWeaponFilterList);
-	} else if($('#shotgun').hasClass('filterSelected')){
-		$.each(rangedWeaponList, function(key, val){
-			if(val.secondType == '霰弹枪'){
-				rangedWeaponFilterList.push(val);
-			}
-		})
-		createRangedWeaponContentBox(rangedWeaponFilterList);
-	} else if($('#launcher').hasClass('filterSelected')){
-		$.each(rangedWeaponList, function(key, val){
-			if(val.secondType == '发射器'){
-				rangedWeaponFilterList.push(val);
-			}
-		})
-		createRangedWeaponContentBox(rangedWeaponFilterList);
-	} else if($('#cannon').hasClass('filterSelected')){
-		$.each(rangedWeaponList, function(key, val){
-			if(val.secondType == '榴弹炮'){
-				rangedWeaponFilterList.push(val);
-			}
-		})
-		createRangedWeaponContentBox(rangedWeaponFilterList);
-	} else if($('#xovee').hasClass('filterSelected')){
-		$.each(rangedWeaponList, function(key, val){
-			if(val.name == 'Xovee'){
-				rangedWeaponFilterList.push(val);
-			}
-		})
-		createRangedWeaponContentBox(rangedWeaponFilterList);
-	} else if($('#rangedWeapon').hasClass('filterSelected')){
-		createRangedWeaponContentBox(rangedWeaponList);
-	} else {
-		$('.secondPageContent').empty();
 	}
-})	
 
+
+	$('#rangedWeapon, #rangedWeaponType > div').click(function(){
+		var rangedWeaponFilterList = [];
+		if($('#pistol').hasClass('filterSelected')){
+			$.each(rangedWeaponList, function(key, val){
+				if(val.secondType == '手枪'){
+					rangedWeaponFilterList.push(val);
+				}
+			})
+			createRangedWeaponContentBox(rangedWeaponFilterList);
+		} else if($('#revolver').hasClass('filterSelected')){
+			$.each(rangedWeaponList, function(key, val){
+				if(val.secondType == '左轮手枪'){
+					rangedWeaponFilterList.push(val);
+				}
+			})
+			createRangedWeaponContentBox(rangedWeaponFilterList);
+		} else if($('#assaultPistol').hasClass('filterSelected')){
+			$.each(rangedWeaponList, function(key, val){
+				if(val.secondType == '突击手枪'){
+					rangedWeaponFilterList.push(val);
+				}
+			})
+			createRangedWeaponContentBox(rangedWeaponFilterList);
+		} else if($('#rifle').hasClass('filterSelected')){
+			$.each(rangedWeaponList, function(key, val){
+				if(val.secondType == '步枪'){
+					rangedWeaponFilterList.push(val);
+				}
+			})
+			createRangedWeaponContentBox(rangedWeaponFilterList);
+		} else if($('#assault').hasClass('filterSelected')){
+			$.each(rangedWeaponList, function(key, val){
+				if(val.secondType == '突击步枪'){
+					rangedWeaponFilterList.push(val);
+				}
+			})
+			createRangedWeaponContentBox(rangedWeaponFilterList);
+		} else if($('#antiMetarielRifle').hasClass('filterSelected')){
+			$.each(rangedWeaponList, function(key, val){
+				if(val.secondType == '反器材步枪'){
+					rangedWeaponFilterList.push(val);
+				}
+			})
+			createRangedWeaponContentBox(rangedWeaponFilterList);
+		} else if($('#shotgun').hasClass('filterSelected')){
+			$.each(rangedWeaponList, function(key, val){
+				if(val.secondType == '霰弹枪'){
+					rangedWeaponFilterList.push(val);
+				}
+			})
+			createRangedWeaponContentBox(rangedWeaponFilterList);
+		} else if($('#launcher').hasClass('filterSelected')){
+			$.each(rangedWeaponList, function(key, val){
+				if(val.secondType == '发射器'){
+					rangedWeaponFilterList.push(val);
+				}
+			})
+			createRangedWeaponContentBox(rangedWeaponFilterList);
+		} else if($('#cannon').hasClass('filterSelected')){
+			$.each(rangedWeaponList, function(key, val){
+				if(val.secondType == '榴弹炮'){
+					rangedWeaponFilterList.push(val);
+				}
+			})
+			createRangedWeaponContentBox(rangedWeaponFilterList);
+		} else if($('#xovee').hasClass('filterSelected')){
+			$.each(rangedWeaponList, function(key, val){
+				if(val.name == 'Xovee'){
+					rangedWeaponFilterList.push(val);
+				}
+			})
+			createRangedWeaponContentBox(rangedWeaponFilterList);
+		} else if($('#rangedWeapon').hasClass('filterSelected')){
+			createRangedWeaponContentBox(rangedWeaponList);
+		} else {
+			$('.secondPageContent').empty();
+		}
+	})	
+
+	// 基地
+	function createBaseContentBox(array){
+		$.each(array, function(key, val){
+			var existsItem = "";
+			var opensItem = "";
+			for (x in val.exists){
+				existsItem = existsItem +
+					"<div class='full borderTop'>" + val.exists[x] + "</div>" + "<div class='clear'></div>"
+			};
+			for (x in val.opens){
+				opensItem = opensItem +
+					"<div class='full borderTop'>" + val.opens[x] + "</div>" + "<div class='clear'></div>"
+			}
+			$('#secondPageContent').append(
+				"<div class='contentBox'>" +
+					"<div class='full'>" + val.name + "</div>" + 
+					"<div class='half'>" + "影响要求" + "</div>" +
+					"<div class='half'>" + val.influenceRequire + "</div>" +
+					"<div class='clear'></div>" +
+					"<div class='half'>" + "人口要求" + "</div>" +
+					"<div class='half'>" + val.peopleRequire + "</div>" +
+					"<div class='clear'></div>" + 
+					"<div class='half'>" + "总区域数" + "</div>" +
+					"<div class='half'>" + val.totalArea + "</div>" +
+					"<div class='clear'></div>" + 
+					"<div class='half'>" + "可建筑区域数" + "</div>" +
+					"<div class='half'>" + val.availableArea + "</div>" +
+					"<div class='clear'></div>" + 
+					"<div class='detailContentBox hide borderTop'>" + 
+						"<div id='baseExists'><div class='full'>已有区域</div></div>" + existsItem +
+						"<div id='baseOpens'><div class='full borderTop'>可建筑区域</div></div>" + opensItem +
+						"<div class='clear'></div>" +
+					"</div>" +
+				"</div>"
+			);
+			
+		})
+	}
+	
+	$('#filterBase > div').click(function(){
+		var baseFilterList = [];
+		if($('#cascadeHills').hasClass('filterSelected')){
+			$.each(baseList, function(key, val){
+				if(val.map == 0){
+					baseFilterList.push(val);
+				}
+			})
+			createBaseContentBox(baseFilterList);
+		} else if($('#meagherValley').hasClass('filterSelected')){
+			$.each(baseList, function(key, val){
+				if(val.map == 1){
+					baseFilterList.push(val);
+				}
+			})
+			createBaseContentBox(baseFilterList);
+		} else if($('#druckerCounty').hasClass('filterSelected')){
+			$.each(baseList, function(key, val){
+				if(val.map == 2){
+					baseFilterList.push(val);
+				}
+			})
+			createBaseContentBox(baseFilterList);
+		} else {
+			$('.secondPageContent').empty();
+		}
+	})
 	
 	
-	
-	
+/* "<div class='detailContentBox hide borderTop'>" + 
+"<div class='half borderTop'>口径: </div><div class='half borderTop'>" + val.caliber + "</div><div class='clear'></div>" +
+"<div class='half borderTop'>容量: </div><div class='half borderTop'>" + val.capacity + "</div><div class='clear'></div>" +
+"<div class='half borderTop'>Salvage: </div><div class='half borderTop'>" + val.salvage + "</div><div class='clear'></div>" +
+"<div class='full description borderTop'>" + val.description + "<br>" + val.cnDescription + "</div>" + 
+"<div class='clear'></div>" + 
+"</div>" +  */
 	
 	
 	
