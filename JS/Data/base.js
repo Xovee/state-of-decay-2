@@ -46,6 +46,27 @@ var base13 = new base(1, "Squelones Brewing Company", 14, 7, 1500, 6,
 ["Large Slot 大型空地", "Small Indoor Slot 小型室内空地 * 3", "Small Outdoor Slot 小型室外空地 * 2"]);
 var base14 = new base(1, "Whitney Field", 15, 5, 3500, 8, 
 ["Sheltered Beds 2 二级避难床位", "Announcer Box 播音员室", "Fortified Bleachers 强化看台 * 2", "Outdoor Beds 2 二级室外卧室", "Outdoor Beds 室外卧室", "Parking 停车位 * 4"], 
-["Large Slot 大型空地 * 3", "Small Outdoor Slot 小型室外空地 * 2"])
+["Large Slot 大型空地 * 3", "Small Outdoor Slot 小型室外空地 * 2"]);
+var base15 = new base(2, "Vogel House", 8, 3, 0, 1, 
+["Chef's Kitchen 厨师的厨房", "Master Bedroom 主卧室", "Double Bunk Room 上下铺卧室", "Trash (Clearable) 垃圾（可清除）", "Parking 停车位 * 2"], 
+["Small Outdoor Slots 小型室内空地 * 2"]);
+var base16 = new base(2, "Wally's Bar and Grill", 8, 5, 500, 4,
+["Bar & Grill 酒吧与烧烤", "Parking 停车位 * 2", "Seating Area (Clearable) 座椅区 * 2"], 
+["Large Slots 大型空地", "Small Outdoor Slots 小型室外空地 * 2"]);
+var base17 = new base(2, "Wheelhouse Truck Stop", 11, 3, 1000, 5, 
+["Outdoor Beds 室外床位", "Restaurant Kitchen 餐厅厨房", "Huge Fuel Storage 大型储油仓库", "Seating Area (Clearable) 座椅区（可清理）", "Parking 停车位 * 4", "Auto Shop 汽车商店"], 
+["Large Slots 大型空地"]);
+var base18 = new base(2, "Cabin Park Motel", 10, 5, 1000, 5, 
+["Sheltered Beds 2 二级避难床位", "Heavy Transh (Clearable) 大堆垃圾（可清理）", "Country Kitchen 乡村厨房", "Old Well 古井", "Parking 停车位* 2", "Seating Area (Clearable) 座椅区（可清理）"], 
+["Large Slots 大型空地 * 2", "Small Indoor Slots 小型室内空地"]);
+var base19 = new base(2, "Mike's Concrete", 14, 5, 1500, 6, 
+["Sheltered Beds 避难床位", "Sheltered Beds 2 二级避难床位", "Machine Shop 机械商店", "Parking 停车位 * 4", "Huge Fuel Storage 大型储油仓库", "Backup Generator 备用发电机"], 
+["Large Slots 大型空地", "Small Indoor Slots 小型室内空地", "Small Outdoor Slots 小型室外空地"]);
+var base20 = new base(2, "Knight's Family Drive-In", 13, 4, 1500, 6, 
+["Parking 停车位 * 4", "Gate Tower 塔楼", "Employee Bathroom 员工宿舍", "Concession Kitchen 妥协厨房", "Drive-in Theater 室内电影院"], 
+["Large Slots 大型空地", "Small Indoor Slots 小型室内空地", "Small Outdoor Slots 小型室外空地 * 3"]);
+var base21 = new base(2, "Barricaded Strip Mall", 13, 5, 3500, 8, 
+["Employee Bathroom 员工宿舍", "Sheltered Beds 2 二级避难床位", "Parking 停车位 * 3", "Tae-Kwon-Do Gym 跆拳道健身房", "High-End Kitchen 高档厨房", "Urgent Care 急诊", "Laundromat (Clearable) 自动洗衣店（可清理）"], 
+["Large Slots 大型空地 * 3", "Small Outdoor Slots 小型室外空地"]);
 
-var baseList = [base1, base2, base3, base4, base5, base6, base7, base8, base9, base10, base11, base12, base13, base14];
+var baseList = [base1, base2, base3, base4, base5, base6, base7, base8, base9, base10, base11, base12, base13, base14,base15, base16, base17, base18, base19, base20, base21,];
